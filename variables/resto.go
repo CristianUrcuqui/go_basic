@@ -24,6 +24,7 @@ func RestoVariables() {
 }
 
 func ConviertoTexto(numero int) (bool, string) {
+	//Parsear de entero a string
 	text := strconv.Itoa(numero)
 	return true, text
 }
