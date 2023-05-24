@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	variables.MonstarEnteros()
+	variables.RestoVariables()
 }
