@@ -1,6 +1,8 @@
 package main
 
-import "go_basic/teclado"
+import (
+	"go_basic/iteracciones"
+)
 
 func main() {
 	/*
@@ -28,6 +30,6 @@ func main() {
 		fmt.Println(text)
 	*/
 
-	teclado.IngresoNumero()
+	iteracciones.Iterar()
 
 }
