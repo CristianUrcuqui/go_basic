@@ -1,7 +1,9 @@
 package main
 
 import (
-	"go_basic/ejercicio2"
+	"fmt"
+	"sort"
+	"time"
 )
 
 func main() {
@@ -31,7 +33,30 @@ func main() {
 
 
 		iteracciones.Iterar()
+		ejercicio2.Calculadora()
+		fmt.Println(ejercicio2.Calculadora())
 	*/
-	ejercicio2.Calculadora()
 
+	numbers := []int{7, 2, 5, 6, 1, 3, 9, 8, 4}
+	fmt.Println("Antes de ordenar:", numbers)
+
+	sort.Slice(numbers, func(i, j int) bool {
+		return numbers[i] < numbers[j]
+	})
+
+	fmt.Println("Después de ordenar:", numbers)
+
+	LongCalculation(func(progress float64) {
+		fmt.Printf("El cálculo está %.2f%% completo\n", progress*100)
+	})
+}
+
+func LongCalculation(callback func(progress float64)) {
+	for i := 0; i <= 10; i++ {
+		time.Sleep(1 * time.Second) // Simula un cálculo que tarda un tiempo en completarse.
+
+		// Calcula el progreso como un porcentaje y llama al callback.
+		progress := float64(i) / 10.0
+		callback(progress)
+	}
 }

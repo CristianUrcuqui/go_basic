@@ -1,16 +1,17 @@
 package ejercicio2
 
 import (
-	"bufio"
+	"bufio" // captura de datos por el usuario
 	"fmt"
-	"os"
-	"strconv"
+	"os"      // sistema operativo
+	"strconv" // convertidor de tipo de datos
 )
 
 var err error
 var numero int
+var texto string
 
-func Calculadora() {
+func Calculadora() string {
 
 	scanner := bufio.NewScanner(os.Stdin)
 
@@ -27,7 +28,9 @@ func Calculadora() {
 	}
 
 	for i := 1; i <= 10; i++ {
-		fmt.Printf("%d x %d = %d\n", numero, i, i*numero)
+		texto += fmt.Sprintf("%d x %d = %d\n", numero, i, i*numero)
 	}
+
+	return texto
 
 }
